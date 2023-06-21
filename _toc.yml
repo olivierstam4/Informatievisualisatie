@@ -4,7 +4,6 @@
 format: jb-book
 root: docs/Intro
 chapters:
-- file: docs/Intro
 - file: docs/Arg 1
 - file: docs/Arg 2
 - file: docs/Arg 3
