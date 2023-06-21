@@ -4,6 +4,6 @@
 format: jb-book
 root: docs/home
 chapters:
-- file: notebook
-- file: Intro
-- file: Appendix
+- file: docs/notebook
+- file: docs/Intro
+- file: docs/Appendix
