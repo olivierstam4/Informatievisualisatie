@@ -1,0 +1,92 @@
+Traceback (most recent call last):
+  File "/home/olivier/miniconda3/lib/python3.10/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/home/olivier/miniconda3/lib/python3.10/site-packages/nbclient/client.py", line 1305, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/home/olivier/miniconda3/lib/python3.10/site-packages/jupyter_core/utils/__init__.py", line 166, in wrapped
+    return loop.run_until_complete(inner)
+  File "/home/olivier/miniconda3/lib/python3.10/asyncio/base_events.py", line 649, in run_until_complete
+    return future.result()
+  File "/home/olivier/miniconda3/lib/python3.10/site-packages/nbclient/client.py", line 705, in async_execute
+    await self.async_execute_cell(
+  File "/home/olivier/miniconda3/lib/python3.10/site-packages/nbclient/client.py", line 1058, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/home/olivier/miniconda3/lib/python3.10/site-packages/nbclient/client.py", line 914, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+import pandas as pd
+import plotly.graph_objects as go
+import wbdata
+
+df1 = pd.read_csv('new_water_done5.csv')
+
+df2 = pd.read_csv('iso_mei.csv')
+industry_data = df2.rename(columns={'Time': 'Year'})
+
+countries_gdp = wbdata.get_dataframe(indicators={'NY.GDP.MKTP.CD': 'GDP'}, convert_date=False)
+
+countries_industry = industry_data['Country'].unique()
+
+common_countries = list(set(countries_gdp.index.get_level_values('country').unique()) & set(countries_industry))
+
+gdp_data = countries_gdp.loc[common_countries]
+industry_data = industry_data[industry_data['Country'].isin(common_countries)]
+
+gdp_data = gdp_data.pivot_table(index='date', columns='country', values='GDP')
+
+num_bins = 3
+bin_labels = ['Low GDP', 'Medium GDP', 'High GDP']
+
+gdp_bins = pd.qcut(gdp_data.loc['2000'], num_bins, labels=bin_labels)
+
+gdp_bin_countries = [list(gdp_bins[gdp_bins == label].index) for label in bin_labels]
+
+avg_industry_data = industry_data.groupby(['Year', 'Country'])['Production of total industry sa, Index'].mean().unstack()
+
+avg_industry_values = []
+for bin_countries in gdp_bin_countries:
+    avg_industry_bin = avg_industry_data[bin_countries].mean(axis=1)
+    avg_industry_values.append(avg_industry_bin)
+
+figgdp = go.Figure()
+
+for bin_label, avg_values in zip(bin_labels, avg_industry_values):
+    figgdp.add_trace(go.Scatter(x=avg_values.index, y=avg_values, name=bin_label))
+
+figgdp.update_layout(
+    xaxis_title='Year',
+    yaxis_title='Average Production of total industry sa, Index',
+    title='Average Industry Production by GDP Bin',
+    legend_title='GDP Bin'
+)
+
+%store figgdp
+
+figgdp.show()
+
+
+
+
+
+
+
+
+
+
+
+
+------------------
+
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
+Cell [0;32mIn[1], line 3[0m
+[1;32m      1[0m [38;5;28;01mimport[39;00m [38;5;21;01mpandas[39;00m [38;5;28;01mas[39;00m [38;5;21;01mpd[39;00m
+[1;32m      2[0m [38;5;28;01mimport[39;00m [38;5;21;01mplotly[39;00m[38;5;21;01m.[39;00m[38;5;21;01mgraph_objects[39;00m [38;5;28;01mas[39;00m [38;5;21;01mgo[39;00m
+[0;32m----> 3[0m [38;5;28;01mimport[39;00m [38;5;21;01mwbdata[39;00m
+[1;32m      5[0m df1 [38;5;241m=[39m pd[38;5;241m.[39mread_csv([38;5;124m'[39m[38;5;124mnew_water_done5.csv[39m[38;5;124m'[39m)
+[1;32m      7[0m df2 [38;5;241m=[39m pd[38;5;241m.[39mread_csv([38;5;124m'[39m[38;5;124miso_mei.csv[39m[38;5;124m'[39m)
+
+[0;31mModuleNotFoundError[0m: No module named 'wbdata'
+

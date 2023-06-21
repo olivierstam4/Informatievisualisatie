@@ -1,3 +1,7 @@
 # Industry and Innovation and their  effects
 
-welcome welcome welcome teset
+The industrial revolution was exactly that, a revolution. A time in which our way of living was changed drastically through the automation of the production of many goods in bulk, the advancement of science and medicine, and the following growth in the quality of life itself for so many all over the world. The rise of industry brought a great deal of incredible things with skyrocketing the world into a global society connecting nearly everyone on Earth.
+
+Though as we know today, the effects of industry are not all fantastic. In recent years more and more concerns have been raised on the topic of global warming which has been on the rise ever since the conception of modern day industry. Apart from the explosive increase of greenhouse gasses such as CO2 and methane in the atmosphere caused by human activities such as industry there are also plenty of other pollutants that the environment has to deal with. By infecting the ground and water, pollutants threaten to destroy entire ecosystems and cause many species of plants and animals to go extinct.
+
+People are starting to wake up more and more to the harsh reality of the irreversible life threatening effects of human industry. Yet, there are still plenty of people on Earth who turn a blind eye to these facts and claim that industry is something we must cherish as is. These two types of people clash often in the real world, but what are the facts? What does the data say about all this? What truly are the effects of industry on our world? By looking at data referring to  it might be possible to obtain an answer to these questions.
