@@ -1,6 +1,7 @@
 # Jupyter Book Tutorial
 
-(Last updated: June 4, 2023)
+(Last updated: June 4, 2023) doet dit wat???
+
 
 In this tutorial, we will teach you how to create a Jupyter book and deploy it online.
 This page is written in markdown, which also serves as an example.
