@@ -5,6 +5,3 @@ format: jb-book
 root: docs/Home
 chapters:
 - file: docs/Intro
-- file: docs/Arg 1
-- file: docs/Arg 2
-- file: docs/Arg 3
