@@ -2,7 +2,7 @@
 # Learn more at https://jupyterbook.org/customize/config.html
 
 title: Jupyter Book Template # Change this to your book title.
-author: Yen-Chia Hsu # Change this to your name (or your team/organization name).
+author: Surja Sarker, Ruben ..., Olivier Stam # Change this to your name (or your team/organization name).
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
@@ -18,7 +18,7 @@ latex:
 repository:
   url: https://github.com/yenchiah/jupyter-book-template  # Online location of your book (change this to your GitHub repository link)
   path_to_book: docs  # Optional path to your book, relative to the repository root
-  branch: main  # Which branch of the repository should be used when creating links (optional)
+  branch: gh-pages  # Which branch of the repository should be used when creating links (optional)
 
 # Add GitHub buttons to your book
 # See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
