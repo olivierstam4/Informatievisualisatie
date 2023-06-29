@@ -2,11 +2,11 @@
 # Learn more at https://jupyterbook.org/customize/toc.html
 
 format: jb-book
-root: docs/Intro
+root: docs/home
 parts:
   - caption: Introduction
     chapters:
-      - file: docs/Arg 5
+      - file: docs/Intro
   - caption: Arguments
     chapters:
     - file: docs/Arg 1
@@ -14,7 +14,12 @@ parts:
     - file: docs/Arg 3
     - file: docs/Arg_4
 
-  - caption: Appendix
+  - caption: Conclusion
     chapters:
     - file: docs/Appendix
+    - file: docs/preprocessing
+    - file: docs/Reflection
+    - file: docs/Work distribution
+    - file: docs/references
+
 
