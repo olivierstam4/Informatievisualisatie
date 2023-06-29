@@ -15,41 +15,48 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-import pandas as pd
-originaldf = pd.read_csv('water_original.csv')
-# for i in originaldf.columns:
-#     print(i, originaldf.iloc[1])
-#  gives 
-# NATIONAL                                             At least basic
-    # Unnamed: 6                              Limited (more than 30 mins)
-    # Unnamed: 7                                               Unimproved
-    # Unnamed: 8                                            Surface water
-    # Unnamed: 9                           Annual rate of change in basic
-    # RURAL                                                At least basic
-    #      Now we can 'manually' change the attribute names like this:
-    # originaldf = originaldf.rename(columns={'Unnamed: 6': 'NATIONAL-Basic'})
-    # and so on 
+df_green = pd.read_csv('pivoted_data_GREEN_GROWTH.csv')
+df_inno = pd.read_csv('pivoted_data_inno.csv')
 
+first_column_green = df_green.pop('COU')
+df_green.insert(0, 'ISO3', first_column_green)
 
-#df['NATIONAL-Basic'] = df['NATIONAL-Basic'].replace('>99', 99)
-# the same with <1 to 1.0
+df_green.to_csv('iso_green.csv')
 
-# Missing data in this dataset has been indicated by '-' in order to make this NaN we used this line:
-# df['National-Basic'].replace('-', float('nan'), inplace=True)
+first_column_inno = df_inno.pop('REG_ID')
+df_inno.insert(0, 'ISO3', first_column_inno)
+
+# df_inno.to_csv('iso_inno.csv')
+
+inno_columns = list(df_inno.columns.values)
+green_list = list(df_green.columns.values)
+
+print(inno_columns)
+
+df_combined = df_green.merge(df_inno, on='ISO3')
+
+all_columns = list(df_combined.columns.values)
+
+# print(df_green.columns.values)
+
+corr_list = []
+
+for item in green_list[3:]:
+    corr = df_combined['    Labour Force with Elementary Education (ISCED 0-2)'].corr(df_green[item])
+    if corr >= 0.4 or corr <= -0.4:
+        corr_list.append([corr, item])
+
+print(corr_list)
+# Total employment, all activities and Demand-based CO2 emissions
 ------------------
 
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mFileNotFoundError[0m                         Traceback (most recent call last)
-Cell [0;32mIn[1], line 2[0m
-[1;32m      1[0m [38;5;28;01mimport[39;00m [38;5;21;01mpandas[39;00m [38;5;28;01mas[39;00m [38;5;21;01mpd[39;00m
-[0;32m----> 2[0m originaldf [38;5;241m=[39m [43mpd[49m[38;5;241;43m.[39;49m[43mread_csv[49m[43m([49m[38;5;124;43m'[39;49m[38;5;124;43mwater_original.csv[39;49m[38;5;124;43m'[39;49m[43m)[49m
-[1;32m      3[0m [38;5;66;03m# for i in originaldf.columns:[39;00m
-[1;32m      4[0m [38;5;66;03m#     print(i, originaldf.iloc[1])[39;00m
-[1;32m      5[0m [38;5;66;03m#  gives [39;00m
-[0;32m   (...)[0m
-[1;32m     20[0m [38;5;66;03m# Missing data in this dataset has been indicated by '-' in order to make this NaN we used this line:[39;00m
-[1;32m     21[0m [38;5;66;03m# df['National-Basic'].replace('-', float('nan'), inplace=True)[39;00m
+Cell [0;32mIn[2], line 1[0m
+[0;32m----> 1[0m df_green [38;5;241m=[39m [43mpd[49m[38;5;241;43m.[39;49m[43mread_csv[49m[43m([49m[38;5;124;43m'[39;49m[38;5;124;43mpivoted_data_GREEN_GROWTH.csv[39;49m[38;5;124;43m'[39;49m[43m)[49m
+[1;32m      2[0m df_inno [38;5;241m=[39m pd[38;5;241m.[39mread_csv([38;5;124m'[39m[38;5;124mpivoted_data_inno.csv[39m[38;5;124m'[39m)
+[1;32m      4[0m first_column_green [38;5;241m=[39m df_green[38;5;241m.[39mpop([38;5;124m'[39m[38;5;124mCOU[39m[38;5;124m'[39m)
 
 File [0;32m~/.local/lib/python3.10/site-packages/pandas/io/parsers/readers.py:912[0m, in [0;36mread_csv[0;34m(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, date_format, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, encoding_errors, dialect, on_bad_lines, delim_whitespace, low_memory, memory_map, float_precision, storage_options, dtype_backend)[0m
 [1;32m    899[0m kwds_defaults [38;5;241m=[39m _refine_defaults_read(
@@ -106,5 +113,5 @@ File [0;32m~/.local/lib/python3.10/site-packages/pandas/io/common.py:859[0m, i
 [1;32m    867[0m         [38;5;66;03m# Binary mode[39;00m
 [1;32m    868[0m         handle [38;5;241m=[39m [38;5;28mopen[39m(handle, ioargs[38;5;241m.[39mmode)
 
-[0;31mFileNotFoundError[0m: [Errno 2] No such file or directory: 'water_original.csv'
+[0;31mFileNotFoundError[0m: [Errno 2] No such file or directory: 'pivoted_data_GREEN_GROWTH.csv'
 
