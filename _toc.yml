@@ -6,14 +6,14 @@ root: docs/Intro
 parts:
   - caption: Introduction
     chapters:
-    - file: docs/Intro
+      - file: docs/Arg 5
   - caption: Arguments
     chapters:
     - file: docs/Arg 1
     - file: docs/Arg 2
     - file: docs/Arg 3
     - file: docs/Arg_4
-    - file: docs/Arg 5
+
   - caption: Appendix
     chapters:
     - file: docs/Appendix
