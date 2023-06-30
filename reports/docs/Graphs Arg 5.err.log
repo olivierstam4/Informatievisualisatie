@@ -76,11 +76,11 @@ fig3dreg.add_trace(go.Scatter(
 fig3dreg.update_layout(
     xaxis_title='Average Development (environment related) technologies',
     yaxis_title='Average Carbon emissions',
-    title='Regression line of the Average carbon emissions and development in environmental technologies per year',
-    height=600, width=1200
+    title='Regression line of the avg carbon emissions & development in environmental technologies per year',
+    height=600, width=800
 )
 fig3dreg.add_annotation(
-    text='Fig 9: Regressional line of the Average Carbon emission data per year compared to the Average Development in environmental related technologies per year',
+    text='Fig 9: Average carbon emission compared to the average development in environmental related technologies per year',
     xref="paper",
     yref="paper",
     x=0.5,
