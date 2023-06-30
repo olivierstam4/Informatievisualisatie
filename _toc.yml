@@ -15,7 +15,6 @@ parts:
   - caption: Conclusion
     chapters:
     - file: docs/Appendix
-    - file: docs/preprocessing
     - file: docs/Reflection
     - file: docs/Work distribution
     - file: docs/references
