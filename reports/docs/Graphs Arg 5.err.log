@@ -15,14 +15,10 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-import pandas as pd
 import plotly.graph_objects as go
-import numpy as np
 import statsmodels.api as sm
 
-
 df_green = pd.read_csv('datasets/iso_green.csv')
-
 
 def filter_outliers(data, threshold=2):
     z_scores = np.abs((data - np.mean(data)) / np.std(data))
@@ -33,12 +29,9 @@ filtered_technologies = filter_outliers(df_green['Development of environment-rel
 filtered_emissions = filter_outliers(df_green['Demand-based CO2 emissions'])
 filtered_years = df_green.loc[filtered_technologies.index, 'Year']
 
-
 filtered_df = pd.DataFrame({'Year': filtered_years, 'Technologies': filtered_technologies, 'Emissions': filtered_emissions})
 
-
 filtered_df = filtered_df.dropna()
-
 
 avg_technologies = filtered_df.groupby('Year')['Technologies'].mean().values
 avg_emissions = filtered_df.groupby('Year')['Emissions'].mean().values
@@ -46,15 +39,12 @@ filtered_years = filtered_df['Year'].unique()
 
 averages_df = pd.DataFrame({'Year': filtered_years, 'Avg Technologies': avg_technologies, 'Avg Emissions': avg_emissions})
 
-
 X = sm.add_constant(avg_technologies)  
 model = sm.OLS(avg_emissions, X)
 results = model.fit()
 reg_line = results.predict(X)
 
-
 fig3dreg = go.Figure()
-
 
 for year, tech, emiss in zip(filtered_years, avg_technologies, avg_emissions):
     fig3dreg.add_annotation(
@@ -62,21 +52,19 @@ for year, tech, emiss in zip(filtered_years, avg_technologies, avg_emissions):
         y=emiss,
         text=str(int(year)),  
         showarrow=False,
-        font=dict(size=8),
+        font=dict(size=12),
         xshift=5,
         yshift=-10
     )
 
-#  scatter trace
 fig3dreg.add_trace(go.Scatter(
     x=avg_technologies,
     y=avg_emissions,
     mode='markers',
     marker=dict(color='rgb(31, 119, 180)'),
-    name='Data'
+    name='Data per year'
 ))
 
-#  regression 
 fig3dreg.add_trace(go.Scatter(
     x=avg_technologies,
     y=reg_line,
@@ -86,9 +74,19 @@ fig3dreg.add_trace(go.Scatter(
 ))
 
 fig3dreg.update_layout(
-    xaxis_title='Avg Technologies',
-    yaxis_title='Avg Emissions',
-    title='Scatter Plot with Regression Line'
+    xaxis_title='Average Development (environment related) technologies',
+    yaxis_title='Average Carbon emissions',
+    title='Regression line of the Average carbon emissions and development in environmental technologies per year',
+    height=600, width=1200
+)
+fig3dreg.add_annotation(
+    text='Fig 9: Regressional line of the Average Carbon emission data per year compared to the Average Development in environmental related technologies per year',
+    xref="paper",
+    yref="paper",
+    x=0.5,
+    y=-0.15,
+    showarrow=False,
+    font=dict(size=12)
 )
 
 %store fig3dreg
@@ -99,12 +97,11 @@ fig3dreg.show()
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mModuleNotFoundError[0m                       Traceback (most recent call last)
-Cell [0;32mIn[2], line 4[0m
-[1;32m      2[0m [38;5;28;01mimport[39;00m [38;5;21;01mplotly[39;00m[38;5;21;01m.[39;00m[38;5;21;01mgraph_objects[39;00m [38;5;28;01mas[39;00m [38;5;21;01mgo[39;00m
-[1;32m      3[0m [38;5;28;01mimport[39;00m [38;5;21;01mnumpy[39;00m [38;5;28;01mas[39;00m [38;5;21;01mnp[39;00m
-[0;32m----> 4[0m [38;5;28;01mimport[39;00m [38;5;21;01mstatsmodels[39;00m[38;5;21;01m.[39;00m[38;5;21;01mapi[39;00m [38;5;28;01mas[39;00m [38;5;21;01msm[39;00m
-[1;32m      7[0m df_green [38;5;241m=[39m pd[38;5;241m.[39mread_csv([38;5;124m'[39m[38;5;124mdatasets/iso_green.csv[39m[38;5;124m'[39m)
-[1;32m     10[0m [38;5;28;01mdef[39;00m [38;5;21mfilter_outliers[39m(data, threshold[38;5;241m=[39m[38;5;241m2[39m):
+Cell [0;32mIn[2], line 2[0m
+[1;32m      1[0m [38;5;28;01mimport[39;00m [38;5;21;01mplotly[39;00m[38;5;21;01m.[39;00m[38;5;21;01mgraph_objects[39;00m [38;5;28;01mas[39;00m [38;5;21;01mgo[39;00m
+[0;32m----> 2[0m [38;5;28;01mimport[39;00m [38;5;21;01mstatsmodels[39;00m[38;5;21;01m.[39;00m[38;5;21;01mapi[39;00m [38;5;28;01mas[39;00m [38;5;21;01msm[39;00m
+[1;32m      4[0m df_green [38;5;241m=[39m pd[38;5;241m.[39mread_csv([38;5;124m'[39m[38;5;124mdatasets/iso_green.csv[39m[38;5;124m'[39m)
+[1;32m      6[0m [38;5;28;01mdef[39;00m [38;5;21mfilter_outliers[39m(data, threshold[38;5;241m=[39m[38;5;241m2[39m):
 
 File [0;32m~/.local/lib/python3.10/site-packages/statsmodels/__init__.py:1[0m
 [0;32m----> 1[0m [38;5;28;01mfrom[39;00m [38;5;21;01mstatsmodels[39;00m[38;5;21;01m.[39;00m[38;5;21;01mcompat[39;00m[38;5;21;01m.[39;00m[38;5;21;01mpatsy[39;00m [38;5;28;01mimport[39;00m monkey_patch_cat_dtype
