@@ -65,7 +65,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/Intro';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Industry, infrastructure, and nature. + test 3" href="Arg%201.html" />
+    <link rel="next" title="Industry, infrastructure, and nature." href="Arg%201.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -152,11 +152,11 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Arguments</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="Arg%201.html">Industry, infrastructure, and nature. + test 3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Arg%201.html">Industry, infrastructure, and nature.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Arg%202.html">Industry size and greenhouse gasses</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Arg%203.html">Quality of water and life</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Arg%204.html">The Industrial increase of Developing Countries</a></li>
-<li class="toctree-l1"><a class="reference internal" href="Arg%205.html">arg 5 temp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Arg%204.html">The Industrial increase of developing countries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Arg%205.html">Emissions and  prevention</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Conclusion</span></p>
 <ul class="nav bd-sidenav">
@@ -164,10 +164,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="preprocessing.html">Preprocessing code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Reflection.html">Feedback from group / TA</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="Work%20distribution.html">Work distribution</a></li>
-<li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="end.html">End</a></li>
 </ul>
 
     </div>
@@ -392,13 +392,18 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Introduction</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Introduction</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#group-members">Group members</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#group">Group</a></li>
+</ul>
+</li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset-and-preprocessing">Dataset and Preprocessing</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset-1-water-set-done-csv">Dataset 1: water_set_done.csv</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset-1-new-water-done5-csv">Dataset 1: new_water_done5.csv</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset-2-iso-infra-csv">Dataset 2: iso_infra.csv</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset-3-iso-green">Dataset 3: iso_green</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset-4-iso-ino-csv">Dataset 4: iso_ino.csv</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset-4-iso-mei-csv">Dataset 4: iso_mei.csv</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset-5-iso-mei-csv">Dataset 5: iso_mei.csv</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocessing-code">Preprocessing code</a></li>
 </ul>
 </li>
 </ul>
@@ -415,15 +420,27 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="introduction">
 <h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">#</a></h1>
+<section id="group-members">
+<h2>Group members<a class="headerlink" href="#group-members" title="Permalink to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Surja Sarker</p></li>
+<li><p>Ruben Veltman</p></li>
+<li><p>Olivier Stam</p></li>
+</ol>
+</section>
+<section id="group">
+<h2>Group<a class="headerlink" href="#group" title="Permalink to this heading">#</a></h2>
+<p>R3</p>
 <p>The industrial revolution was exactly that, a revolution. A time in which our way of living was changed drastically through the automation of the production of many goods in bulk, the advancement of science and medicine, and the following growth in the quality of life itself for so many all over the world. The rise of industry brought a great deal of incredible things with skyrocketing the world into a global society connecting nearly everyone on Earth.</p>
 <p>Though as we know today, the effects of industry are not all fantastic. In recent years more and more concerns have been raised on the topic of global warming which has been on the rise ever since the conception of modern day industry. Apart from the explosive increase of greenhouse gasses such as CO2 and methane in the atmosphere caused by human activities such as industry there are also plenty of other pollutants that the environment has to deal with. By infecting the ground and water, pollutants threaten to destroy entire ecosystems and cause many species of plants and animals to go extinct.</p>
 <p>Regardless of public opinion, there are also those that cherish more conservative ideas on the topic of industry. On a basic level there are two different views people can take on, on the one hand there are people that are convinced that industry is something to be weary of, and on the other hand there are those that believe there is no problem with industry at all. These two types of people clash often in the real world, but what are the facts? What does the data say about all this? What truly are the effects of industry on our world? By looking at data referring to  it might be possible to obtain an answer to these questions.</p>
 </section>
+</section>
 <section class="tex2jax_ignore mathjax_ignore" id="dataset-and-preprocessing">
 <h1>Dataset and Preprocessing<a class="headerlink" href="#dataset-and-preprocessing" title="Permalink to this heading">#</a></h1>
 <p>In order to conduct our research on this matter it was necessary to acquire a few datasets to look at and find connections between. Five separate datasets were selected, a dataset on water quality, a dataset on industry, a dataset on infrastructure, a dataset on innovation, and lastly a dataset on nature. Every dataset contains a column with three-letter country tags which were used to join the datasets together during the research process. Therefor this column was renamed to ‘ISO3’ in every dataset. The dataset were also each pivoted in order to match the same column pattern and order. With this country tag column as the join key all of the data has been ordered by year. The following is a short rundown of each dataset with links to each webpage.</p>
-<section id="dataset-1-water-set-done-csv">
-<h2>Dataset 1: water_set_done.csv<a class="headerlink" href="#dataset-1-water-set-done-csv" title="Permalink to this heading">#</a></h2>
+<section id="dataset-1-new-water-done5-csv">
+<h2>Dataset 1: new_water_done5.csv<a class="headerlink" href="#dataset-1-new-water-done5-csv" title="Permalink to this heading">#</a></h2>
 <p>Original link: <a class="reference external" href="https://washdata.org/data/country/WLD/household/download">https://washdata.org/data/country/WLD/household/download</a></p>
 <p>Short description:  This dataset contains 46 different attributes and 4914 different entries. These attributes include things such as total population, rural surface water percentage and to what extend water quality and access has improved in different regions for almost every major country on earth from the year 2000 up until the year 2020. The data is split in three main categories:</p>
 <ol class="arabic simple">
@@ -436,7 +453,7 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
-<span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;new_water_done5.csv&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;datasets/new_water_done5.csv&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -567,7 +584,7 @@ document.write(`
 <p>Short description:  This dataset contains 23 attributes and 1340 entries which provide information about a multitude of different major countries from the year 2000 up until the year 2020 on the topic of nation wide infrastructure. Such points of information include such things as the number of airports per 1 million of inhabitants, the total density of road and inland waterway infrastructure spending.</p>
 <div class="cell tag_hide_cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;iso_infra.csv&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;datasets/iso_infra.csv&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -698,7 +715,7 @@ document.write(`
 <p>Short description:  This dataset contains 165 different attributes and 5366 total entries detailing different points of information from a grand multitude of different countries on the topic of green growth. Green growth is a concept which is measured in a number of ways such as the CO2 productivity, energy productivity, and freshwater and forest resources. These points of data provide insight into the progress countries have been making towards a greener and more environmentally friendly way of living.</p>
 <div class="cell tag_hide_cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;iso_green.csv&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;datasets/iso_green.csv&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -829,7 +846,7 @@ document.write(`
 <p>Short description: This dataset has 82 different attributes and 1005 total entries which provide information on the topic of regional information for most countries on Earth. These attributes include things such as different levels of student enrolment, the spread of the workforce throughout the different sectors, and progress and innovation on numerous things such as nanotech and medicine. This dataset could provide insight into how well developed countries are and how they have progressed throughout the years.</p>
 <div class="cell tag_hide_cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;iso_inno.csv&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;datasets/iso_inno.csv&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -954,13 +971,13 @@ document.write(`
 </div></div></div>
 </div>
 </section>
-<section id="dataset-4-iso-mei-csv">
-<h2>Dataset 4: iso_mei.csv<a class="headerlink" href="#dataset-4-iso-mei-csv" title="Permalink to this heading">#</a></h2>
+<section id="dataset-5-iso-mei-csv">
+<h2>Dataset 5: iso_mei.csv<a class="headerlink" href="#dataset-5-iso-mei-csv" title="Permalink to this heading">#</a></h2>
 <p>Original link: <a class="reference external" href="https://stats.oecd.org/Index.aspx?DataSetCode=MEI_REAL">https://stats.oecd.org/Index.aspx?DataSetCode=MEI_REAL</a></p>
 <p>Short description:  This dataset contains 14 attributes and 987 different entries of a multitude of different countries from the year 2000 up until the year 2020 on the topic of the production and sales of different products a country produces. These attributes include things such as production of different kinds of goods such as intermediate goods and service goods, and the production of energy and electricity. With this dataset it is possible to gain insight into the kind of services a country provides which allows one to determine its place on the world’s grand stage.</p>
 <div class="cell tag_hide_cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;iso_mei.csv&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;datasets/iso_mei.csv&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1060,6 +1077,11 @@ document.write(`
 </div></div></div>
 </div>
 </section>
+<section id="preprocessing-code">
+<h2>Preprocessing code<a class="headerlink" href="#preprocessing-code" title="Permalink to this heading">#</a></h2>
+<p>For a more detailed analysis of how the datasets have been preprocessed please follow the link to the git repository:
+<a class="github reference external" href="https://github.com/olivierstam4/Informatievisualisatie/tree/main/docs/preprocess-research/Preprocess">olivierstam4/Informatievisualisatie</a></p>
+</section>
 <div class="toctree-wrapper compound">
 </div>
 <div class="toctree-wrapper compound">
@@ -1102,7 +1124,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Industry, infrastructure, and nature. + test 3</p>
+        <p class="prev-next-title">Industry, infrastructure, and nature.</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -1124,13 +1146,18 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Introduction</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Introduction</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#group-members">Group members</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#group">Group</a></li>
+</ul>
+</li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset-and-preprocessing">Dataset and Preprocessing</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset-1-water-set-done-csv">Dataset 1: water_set_done.csv</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset-1-new-water-done5-csv">Dataset 1: new_water_done5.csv</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset-2-iso-infra-csv">Dataset 2: iso_infra.csv</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset-3-iso-green">Dataset 3: iso_green</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset-4-iso-ino-csv">Dataset 4: iso_ino.csv</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset-4-iso-mei-csv">Dataset 4: iso_mei.csv</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset-5-iso-mei-csv">Dataset 5: iso_mei.csv</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocessing-code">Preprocessing code</a></li>
 </ul>
 </li>
 </ul>

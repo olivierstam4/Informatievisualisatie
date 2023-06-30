@@ -19,31 +19,31 @@ import pandas as pd
 import plotly.graph_objs as go
 import plotly.express as px
 import numpy as np
-water = pd.read_csv('new_water_done5.csv')
-green = pd.read_csv('iso_green.csv')
-inno = pd.read_csv('iso_inno.csv')
-infra = pd.read_csv('iso_infra.csv')
-MEI = pd.read_csv('iso_mei.csv')
+water = pd.read_csv('datasets/new_water_done5.csv')
+green = pd.read_csv('datasets/iso_green.csv')
+inno = pd.read_csv('datasets/iso_inno.csv')
+infra = pd.read_csv('datasets/iso_infra.csv')
+MEI = pd.read_csv('datasets/iso_mei.csv')
 import pandas as pd
 
 
-columns_water = water.select_dtypes(include=['float', 'int'])
-columns_water = pd.concat([columns_water, water['ISO3']], axis=1)
+# columns_water = water.select_dtypes(include=['float', 'int'])
+# columns_water = pd.concat([columns_water, water['ISO3']], axis=1)
 
-columns_inno = inno.select_dtypes(include=['float', 'int'])
-columns_inno = pd.concat([columns_inno, inno['ISO3']], axis=1)
-columns_green = green.select_dtypes(include=['float', 'int'])
-columns_green = pd.concat([columns_green, green['ISO3']], axis=1)
-columns_infra = infra.select_dtypes(include=['float', 'int'])
-columns_infra = pd.concat([columns_infra, infra['ISO3']], axis=1)
-columns_MEI = MEI.select_dtypes(include=['float', 'int'])
-columns_MEI = pd.concat([columns_MEI, MEI['ISO3']], axis=1)
+# columns_inno = inno.select_dtypes(include=['float', 'int'])
+# columns_inno = pd.concat([columns_inno, inno['ISO3']], axis=1)
+# columns_green = green.select_dtypes(include=['float', 'int'])
+# columns_green = pd.concat([columns_green, green['ISO3']], axis=1)
+# columns_infra = infra.select_dtypes(include=['float', 'int'])
+# columns_infra = pd.concat([columns_infra, infra['ISO3']], axis=1)
+# columns_MEI = MEI.select_dtypes(include=['float', 'int'])
+# columns_MEI = pd.concat([columns_MEI, MEI['ISO3']], axis=1)
 
-# columns_water = water.select_dtypes(include=['float'])
-# columns_inno = inno.select_dtypes(include=['float'])
-# columns_green = green.select_dtypes(include=['float'])
-# columns_infra = infra.select_dtypes(include=['float'])
-# columns_MEI = MEI.select_dtypes(include=['float'])
+columns_water = water.select_dtypes(include=['float'])
+columns_inno = inno.select_dtypes(include=['float'])
+columns_green = green.select_dtypes(include=['float'])
+columns_infra = infra.select_dtypes(include=['float'])
+columns_MEI = MEI.select_dtypes(include=['float'])
 ------------------
 
 
@@ -52,9 +52,9 @@ columns_MEI = pd.concat([columns_MEI, MEI['ISO3']], axis=1)
 Cell [0;32mIn[1], line 5[0m
 [1;32m      3[0m [38;5;28;01mimport[39;00m [38;5;21;01mplotly[39;00m[38;5;21;01m.[39;00m[38;5;21;01mexpress[39;00m [38;5;28;01mas[39;00m [38;5;21;01mpx[39;00m
 [1;32m      4[0m [38;5;28;01mimport[39;00m [38;5;21;01mnumpy[39;00m [38;5;28;01mas[39;00m [38;5;21;01mnp[39;00m
-[0;32m----> 5[0m water [38;5;241m=[39m [43mpd[49m[38;5;241;43m.[39;49m[43mread_csv[49m[43m([49m[38;5;124;43m'[39;49m[38;5;124;43mnew_water_done5.csv[39;49m[38;5;124;43m'[39;49m[43m)[49m
-[1;32m      6[0m green [38;5;241m=[39m pd[38;5;241m.[39mread_csv([38;5;124m'[39m[38;5;124miso_green.csv[39m[38;5;124m'[39m)
-[1;32m      7[0m inno [38;5;241m=[39m pd[38;5;241m.[39mread_csv([38;5;124m'[39m[38;5;124miso_inno.csv[39m[38;5;124m'[39m)
+[0;32m----> 5[0m water [38;5;241m=[39m [43mpd[49m[38;5;241;43m.[39;49m[43mread_csv[49m[43m([49m[38;5;124;43m'[39;49m[38;5;124;43mdatasets/new_water_done5.csv[39;49m[38;5;124;43m'[39;49m[43m)[49m
+[1;32m      6[0m green [38;5;241m=[39m pd[38;5;241m.[39mread_csv([38;5;124m'[39m[38;5;124mdatasets/iso_green.csv[39m[38;5;124m'[39m)
+[1;32m      7[0m inno [38;5;241m=[39m pd[38;5;241m.[39mread_csv([38;5;124m'[39m[38;5;124mdatasets/iso_inno.csv[39m[38;5;124m'[39m)
 
 File [0;32m~/.local/lib/python3.10/site-packages/pandas/io/parsers/readers.py:912[0m, in [0;36mread_csv[0;34m(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, date_format, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, encoding_errors, dialect, on_bad_lines, delim_whitespace, low_memory, memory_map, float_precision, storage_options, dtype_backend)[0m
 [1;32m    899[0m kwds_defaults [38;5;241m=[39m _refine_defaults_read(
@@ -111,5 +111,5 @@ File [0;32m~/.local/lib/python3.10/site-packages/pandas/io/common.py:859[0m, i
 [1;32m    867[0m         [38;5;66;03m# Binary mode[39;00m
 [1;32m    868[0m         handle [38;5;241m=[39m [38;5;28mopen[39m(handle, ioargs[38;5;241m.[39mmode)
 
-[0;31mFileNotFoundError[0m: [Errno 2] No such file or directory: 'new_water_done5.csv'
+[0;31mFileNotFoundError[0m: [Errno 2] No such file or directory: 'datasets/new_water_done5.csv'
 

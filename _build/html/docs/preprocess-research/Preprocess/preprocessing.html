@@ -151,11 +151,11 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Arguments</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../../Arg%201.html">Industry, infrastructure, and nature. + test 3</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Arg%201.html">Industry, infrastructure, and nature.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../Arg%202.html">Industry size and greenhouse gasses</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../Arg%203.html">Quality of water and life</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../Arg%204.html">The Industrial increase of Developing Countries</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../Arg%205.html">arg 5 temp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Arg%204.html">The Industrial increase of developing countries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Arg%205.html">Emissions and  prevention</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Conclusion</span></p>
 <ul class="nav bd-sidenav">
@@ -163,10 +163,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 
 
-<li class="toctree-l1"><a class="reference internal" href="../../preprocessing.html">Preprocessing code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../Reflection.html">Feedback from group / TA</a></li>
+
 <li class="toctree-l1"><a class="reference internal" href="../../Work%20distribution.html">Work distribution</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../end.html">End</a></li>
 </ul>
 
     </div>
@@ -412,9 +412,9 @@ document.write(`
 <p>A lot of attributes had strings in them indicating a value lower than 1 or higher than 99, these values have been changed to the floats 1.0 and 99.0 respectivly per column like this:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="n">originaldf</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;water_original.csv&#39;</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">originaldf</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import pandas as pd</span>
+<span class="c1"># originaldf = pd.read_csv(&#39;originaldatasets/water_original.csv&#39;)</span>
+<span class="c1"># for i in originaldf.columns:</span>
 <span class="c1">#     print(i, originaldf.iloc[1])</span>
 <span class="c1">#  gives </span>
 <span class="c1"># NATIONAL                                             At least basic</span>
@@ -431,16 +431,9 @@ document.write(`
 <span class="c1">#df[&#39;NATIONAL-Basic&#39;] = df[&#39;NATIONAL-Basic&#39;].replace(&#39;&gt;99&#39;, 99)</span>
 <span class="c1"># the same with &lt;1 to 1.0</span>
 
-<span class="c1"># Missing data in this dataset has been indicated by &#39;-&#39; in order to make this NaN we used this line:</span>
+<span class="c1"># Missing data in this dataset has been indicated by &#39;-&#39; in order to make this </span>
+<span class="c1"># NaN we used this line:</span>
 <span class="c1"># df[&#39;National-Basic&#39;].replace(&#39;-&#39;, float(&#39;nan&#39;), inplace=True)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">21</span>
-    <span class="c1"># df[&#39;National-Basic&#39;].replace(&#39;-&#39;, float(&#39;nan&#39;), inplace=True)</span>
-                                                                   <span class="o">^</span>
-<span class="ne">SyntaxError</span>: incomplete input
 </pre></div>
 </div>
 </div>
@@ -451,6 +444,11 @@ An example how NATIONAL-Basic was preprocessed can be found here:</p>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># We made sure the countries were seperated with correcting missing data and repeated the same proces with bfil()</span>
 <span class="c1"># df[&#39;NATIONAL-Basic&#39;] = df.groupby(&#39;Country&#39;)[&#39;NATIONAL-Basic&#39;].ffill()</span>
+
+<span class="c1"># Since there was a trend in this attribute, slow change, </span>
+<span class="c1"># and since this data has been used in bulk so not looking at every little detail </span>
+<span class="c1"># we forward and backward filled it. This led to no weird data and </span>
+<span class="c1"># everything checked out.</span>
 </pre></div>
 </div>
 </div>
@@ -459,11 +457,11 @@ An example how NATIONAL-Basic was preprocessed can be found here:</p>
 </section>
 <section id="rest-of-the-datasets">
 <h2>Rest of the datasets<a class="headerlink" href="#rest-of-the-datasets" title="Permalink to this heading">#</a></h2>
-<p>The other 4 datasets all had the same structure so followed the same code:</p>
+<p>The other 4 datasets all had nearly the same structure so followed large chucks of the same code:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Read the original file</span>
-<span class="c1"># df = pd.read_csv(&#39;GREEN_GROWTH_13062023131420405.csv&#39;)</span>
+<span class="c1"># df = pd.read_csv(&#39;originaldatasets/GREEN_GROWTH_13062023131420405.csv&#39;)</span>
 
 <span class="c1"># Pivot the data using groupby and unstack</span>
 <span class="c1"># df_pivoted = df.groupby([&#39;Country&#39;, &#39;Year&#39;, &#39;Variable&#39;])[&#39;Value&#39;].first().unstack()</span>
@@ -480,32 +478,32 @@ An example how NATIONAL-Basic was preprocessed can be found here:</p>
 <p>In this code I took the original GREEN GROWTH dataset where the variables were in a single column and took each unique variable and made it its own column whilst keeping the Country, Year and Value intact.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import pandas as pd</span>
 
-<span class="c1"># Read the CSV file</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;MEI_REAL_13062023132859795.csv&#39;</span><span class="p">)</span>
+<span class="c1"># # Read the CSV file</span>
+<span class="c1"># df = pd.read_csv(&#39;originaldatasets/MEI_REAL_13062023132859795.csv&#39;)</span>
 
-<span class="c1"># Pivot the data using groupby and unstack</span>
-<span class="n">df_pivoted</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;Country&#39;</span><span class="p">,</span> <span class="s1">&#39;Time&#39;</span><span class="p">,</span> <span class="s1">&#39;Subject&#39;</span><span class="p">])[</span><span class="s1">&#39;Value&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">first</span><span class="p">()</span><span class="o">.</span><span class="n">unstack</span><span class="p">()</span>
+<span class="c1"># # Pivot the data using groupby and unstack</span>
+<span class="c1"># df_pivoted = df.groupby([&#39;Country&#39;, &#39;Time&#39;, &#39;Subject&#39;])[&#39;Value&#39;].first().unstack()</span>
 
-<span class="c1"># Reset the index</span>
-<span class="n">df_pivoted</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="c1"># # Reset the index</span>
+<span class="c1"># df_pivoted.reset_index(inplace=True)</span>
 
-<span class="c1"># Save the pivoted data to a new CSV file</span>
-<span class="n">df_pivoted</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;pivoted_data_MEI.csv&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="c1"># # Save the pivoted data to a new CSV file</span>
+<span class="c1"># df_pivoted.to_csv(&#39;pivoted_data_MEI.csv&#39;, index=False)</span>
+<span class="c1"># import pandas as pd</span>
 
-<span class="c1"># Read the CSV file</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;GREEN_GROWTH_13062023131420405.csv&#39;</span><span class="p">)</span>
+<span class="c1"># # Read the CSV file</span>
+<span class="c1"># df = pd.read_csv(&#39;GREEN_GROWTH_13062023131420405.csv&#39;)</span>
 
-<span class="c1"># Pivot the data using groupby and unstack</span>
-<span class="n">df_pivoted</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;Country&#39;</span><span class="p">,</span> <span class="s1">&#39;Year&#39;</span><span class="p">,</span> <span class="s1">&#39;Variable&#39;</span><span class="p">])[</span><span class="s1">&#39;Value&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">first</span><span class="p">()</span><span class="o">.</span><span class="n">unstack</span><span class="p">()</span>
+<span class="c1"># # Pivot the data using groupby and unstack</span>
+<span class="c1"># df_pivoted = df.groupby([&#39;Country&#39;, &#39;Year&#39;, &#39;Variable&#39;])[&#39;Value&#39;].first().unstack()</span>
 
-<span class="c1"># Reset the index</span>
-<span class="n">df_pivoted</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="c1"># # Reset the index</span>
+<span class="c1"># df_pivoted.reset_index(inplace=True)</span>
 
-<span class="c1"># Save the pivoted data to a new CSV file</span>
-<span class="n">df_pivoted</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;pivoted_data_GREEN_GROWTH.csv&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="c1"># # Save the pivoted data to a new CSV file</span>
+<span class="c1"># df_pivoted.to_csv(&#39;pivoted_data_GREEN_GROWTH.csv&#39;, index=False)</span>
 </pre></div>
 </div>
 </div>
@@ -513,19 +511,19 @@ An example how NATIONAL-Basic was preprocessed can be found here:</p>
 <p>In this code I took the original MEI dataset where the variables were in a single column and took each unique variable and made it its own column whilst keeping the Country, Time and Value intact.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import pandas as pd</span>
 
-<span class="c1"># Read the CSV file</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;REGION_INNOVATION_13062023132043749.csv&#39;</span><span class="p">)</span>
+<span class="c1"># # Read the CSV file</span>
+<span class="c1"># df = pd.read_csv(&#39;originaldatasets/REGION_INNOVATION_13062023132043749.csv&#39;)</span>
 
-<span class="c1"># Pivot the data using groupby and unstack</span>
-<span class="n">df_pivoted</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;Country&#39;</span><span class="p">,</span> <span class="s1">&#39;Year&#39;</span><span class="p">,</span> <span class="s1">&#39;Indicator&#39;</span><span class="p">])[</span><span class="s1">&#39;Value&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">first</span><span class="p">()</span><span class="o">.</span><span class="n">unstack</span><span class="p">()</span>
+<span class="c1"># # Pivot the data using groupby and unstack</span>
+<span class="c1"># df_pivoted = df.groupby([&#39;Country&#39;, &#39;Year&#39;, &#39;Indicator&#39;])[&#39;Value&#39;].first().unstack()</span>
 
-<span class="c1"># Reset the index</span>
-<span class="n">df_pivoted</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="c1"># # Reset the index</span>
+<span class="c1"># df_pivoted.reset_index(inplace=True)</span>
 
-<span class="c1"># Save the pivoted data to a new CSV file</span>
-<span class="n">df_pivoted</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;pivoted_data_inno.csv&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="c1"># # Save the pivoted data to a new CSV file</span>
+<span class="c1"># df_pivoted.to_csv(&#39;pivoted_data_inno.csv&#39;, index=False)</span>
 </pre></div>
 </div>
 </div>
@@ -533,19 +531,19 @@ An example how NATIONAL-Basic was preprocessed can be found here:</p>
 <p>In this code I took the original innovation dataset where the variables were in a single column and took each unique variable and made it its own column whilst keeping the Country, Time and Value intact.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import pandas as pd</span>
 
-<span class="c1"># Read the CSV file</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;ITF_INDICATORS_12062023142856355.csv&#39;</span><span class="p">)</span>
+<span class="c1"># # Read the CSV file</span>
+<span class="c1"># df = pd.read_csv(&#39;originaldatasets/ITF_INDICATORS_12062023142856355.csv&#39;)</span>
 
-<span class="c1"># Pivot the data using groupby and unstack</span>
-<span class="n">df_pivoted</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;Country&#39;</span><span class="p">,</span> <span class="s1">&#39;Year&#39;</span><span class="p">,</span> <span class="s1">&#39;Indicator&#39;</span><span class="p">])[</span><span class="s1">&#39;Value&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">first</span><span class="p">()</span><span class="o">.</span><span class="n">unstack</span><span class="p">()</span>
+<span class="c1"># # Pivot the data using groupby and unstack</span>
+<span class="c1"># df_pivoted = df.groupby([&#39;Country&#39;, &#39;Year&#39;, &#39;Indicator&#39;])[&#39;Value&#39;].first().unstack()</span>
 
-<span class="c1"># Reset the index</span>
-<span class="n">df_pivoted</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="c1"># # Reset the index</span>
+<span class="c1"># df_pivoted.reset_index(inplace=True)</span>
 
-<span class="c1"># Save the pivoted data to a new CSV file</span>
-<span class="n">df_pivoted</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;pivoted_data_ITF_INFRA.csv&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="c1"># # Save the pivoted data to a new CSV file</span>
+<span class="c1"># df_pivoted.to_csv(&#39;pivoted_data_ITF_INFRA.csv&#39;, index=False)</span>
 </pre></div>
 </div>
 </div>
