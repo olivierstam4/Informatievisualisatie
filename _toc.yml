@@ -18,5 +18,6 @@ parts:
     - file: docs/Reflection
     - file: docs/Work distribution
     - file: docs/references
+    - file: docs/end
 
 
